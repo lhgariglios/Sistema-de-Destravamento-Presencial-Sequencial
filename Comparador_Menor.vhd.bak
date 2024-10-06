@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Comparador_Menor is
+	port
+	(A,B: in std_logic_vector(11 downto 0);
+	menor: out std_logic	);
+end Comparador_Menor;
+
+
+
+architecture behavior of Comparador is
+	
+	begin
+		menor <= '1' when A < B else igual <= '0';
+	end behavior;

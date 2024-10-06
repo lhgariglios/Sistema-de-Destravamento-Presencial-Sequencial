@@ -1,0 +1,15 @@
+-- begin_signature
+-- Codigos
+-- end_signature
+WIDTH=10;
+DEPTH=4;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	3 :	0000000000;
+	2 :	1000010010;
+	1 :	1001110011;
+	0 :	1011000111;
+END;

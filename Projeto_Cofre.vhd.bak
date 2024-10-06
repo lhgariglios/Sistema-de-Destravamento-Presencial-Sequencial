@@ -1,0 +1,31 @@
+library ieee;
+use ieee.std_loogic_1164.all;
+
+entity Projeto_Cofre is
+	port
+	(clk, x: in std_logic;
+	B1,B2,B3: in std_logic;
+	pessoa1, pessoa2, pessoa3: in std_logic(11 downto 0);
+	abrir: out std_logic;
+	);
+end Projeto_Cofre;
+architecture behavior of Projeto_Cofre is
+	component Dados
+		port
+			(_pessoa1, _pessoa2, _pessoa3: in std_logic(11 downto 0);
+			_x, _clk, load1, load2, load3: in std_logic;
+			igual: out std_logic;
+			);
+	end component;
+	component Logica
+		port
+		( b1,b2,b3,igual: in std_logic;
+		_clk: in std_logic;
+		_abrir, load1, load2, load3: out std_logic
+		);
+	end component
+	signal Fload1, Fload2, Fload3, Fi: std_logic;
+	begin
+		Caminho_Dados: Dados port map (_x => x, _clk => clk, load1 => Fload1, load2 => Fload2, load3 => Fload3, igual => Fi, _pessoa1 => pessoa1, _pessoa2 => pessoa2, _pessoa3 => pessoa3);
+		Logica_Combinacional: Logica port map (_clk => clk, b1 => B1, b2 => B2, b3 => B3, igual => Fi, _abrir => abrir, load1 => Fload1, load2 => Fload2, load3 => Fload3);
+	end Projeto_Cofre;	

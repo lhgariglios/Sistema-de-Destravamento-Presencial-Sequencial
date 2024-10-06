@@ -1,0 +1,15 @@
+-- begin_signature
+-- CodMin
+-- end_signature
+WIDTH=12;
+DEPTH=4;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	3 :	000000000000;
+	2 :	011001110011;
+	1 :	011000010010;
+	0 :	011011000111;
+END;

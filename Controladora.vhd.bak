@@ -1,0 +1,115 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Controladora is
+	port
+	(Clk, X: in std_logic;
+	B1,B2,B3, Igual: in std_logic;
+	Luz1, Luz2, Luz3, Load1, Load2, Load3, Conta, Reset_Tempo, Abre: out std_logic
+	);
+end Controladora;
+architecture behavior of Controladora is
+	type estados(Inicio,A1,A2,B1,B2,C1,C2,D,Abrir);
+	signal estado_atual, proximo_estado: estados;
+	begin
+		process (B1,B2,B3,Igual,estado_atual)
+			case estado_atual is
+				when Inicio =>
+					if(B1 = '0')then
+						Luz1 <=;
+						Luz2 <=;
+						Luz3 <=;
+						Load1 <=;
+						Load2 <=;
+						Load3 <=;
+						Conta <=;
+						Reset_Tempo <=;
+						Abrir <=;
+						proximo_estado <= Inicio;
+					elsif(B1 = '1' and B2 = '0' and B3 = '0')then
+						Luz1 <=;
+						Luz2 <=;
+						Luz3 <=;
+						Load1 <=;
+						Load2 <=;
+						Load3 <=;
+						Conta <=;
+						Reset_Tempo <=;
+						Abrir <=;
+						proximo_estado <= A1;
+					end if;
+				when A1 =>
+					Luz1 <=;
+					Luz2 <=;
+					Luz3 <=;
+					Load1 <=;
+					Load2 <=;
+					Load3 <=;
+					Conta <=;
+					Reset_Tempo <=;
+					Abrir <=;
+					proximo_estado <= A2;
+				when A2 =>
+					if(B1 = '0' or Igual = '0' or B3 = '1')then
+						Luz1 <=;
+						Luz2 <=;
+						Luz3 <=;
+						Load1 <=;
+						Load2 <=;
+						Load3 <=;
+						Conta <=;
+						Reset_Tempo <=;
+						Abrir <=;
+						proximo_estado <= Inicio;
+					elsif(B1 = '1' and B2 = '0' and B3 = '0' and Igual = '1')then
+						Luz1 <=;
+						Luz2 <=;
+						Luz3 <=;
+						Load1 <=;
+						Load2 <=;
+						Load3 <=;
+						Conta <=;
+						Reset_Tempo <=;
+						Abrir <=;
+						proximo_estado <= A2;
+					elsif(B1 = '1' and B2 = '1' and B3 = '0' and Igual = '1')then
+						Luz1 <=;
+						Luz2 <=;
+						Luz3 <=;
+						Load1 <=;
+						Load2 <=;
+						Load3 <=;
+						Conta <=;
+						Reset_Tempo <=;
+						Abrir <=;
+						proximo_estado <= B1;
+					end if;
+				when B1 =>
+					Luz1 <=;
+					Luz2 <=;
+					Luz3 <=;
+					Load1 <=;
+					Load2 <=;
+					Load3 <=;
+					Conta <=;
+					Reset_Tempo <=;
+					Abrir <=;
+					proximo_estado <= B2;
+				when B2 =>
+				when C1 =>
+					Luz1 <=;
+					Luz2 <=;
+					Luz3 <=;
+					Load1 <=;
+					Load2 <=;
+					Load3 <=;
+					Conta <=;
+					Reset_Tempo <=;
+					Abrir <=;
+					proximo_estado <= C2;
+				when C2 =>
+				when D =>
+				when Abrir =>
+			end case;
+		end process;
+	end behavior;	
